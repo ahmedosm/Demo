@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .stats {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+        
+        .button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .button-primary {
+            background: #007cba;
+            color: white;
+        }
+        
+        .button-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .button:hover {
+            opacity: 0.8;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .status.active {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .tips {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .tip {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">🛡️ Message Blocker</div>
+        <div class="subtitle">Stop IT Admin Blocking Messages</div>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-item">
+            <span>Messages Hidden:</span>
+            <span id="hiddenCount">0</span>
+        </div>
+        <div class="stat-item">
+            <span>Status:</span>
+            <span id="status">Active</span>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button id="refreshBtn" class="button button-primary">
+            🔄 Refresh Current Page
+        </button>
+        <button id="clearDataBtn" class="button button-secondary">
+            🗑️ Clear Browser Data
+        </button>
+        <button id="openOptionsBtn" class="button button-secondary">
+            ⚙️ More Solutions
+        </button>
+    </div>
+    
+    <div class="status active">
+        Extension is actively blocking unwanted messages
+    </div>
+    
+    <div class="tips">
+        <div class="tip">💡 Try switching to mobile data/hotspot</div>
+        <div class="tip">💡 Use incognito/private browsing mode</div>
+        <div class="tip">💡 Clear all browser data if issues persist</div>
+        <div class="tip">💡 Try a different browser (Firefox, Edge)</div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

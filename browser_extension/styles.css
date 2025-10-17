@@ -1,0 +1,174 @@
+/* CSS to hide IT admin blocking messages */
+
+/* Hide elements containing specific blocking text patterns */
+*:contains("blocked by your IT admin"),
+*:contains("IT admin is not allowing"),
+*:contains("content is blocked"),
+*:contains("access denied by administrator"),
+*:contains("restricted by policy"),
+*:contains("blocked by administrator"),
+*:contains("corporate policy"),
+*:contains("network administrator"),
+*:contains("content filtering"),
+*:contains("web filter"),
+*:contains("security policy"),
+*:contains("access restricted"),
+*:contains("site blocked"),
+*:contains("category blocked"),
+*:contains("policy violation"),
+*:contains("administrative block"),
+*:contains("firewall blocked"),
+*:contains("proxy blocked"),
+*:contains("filtered content"),
+*:contains("unauthorized access") {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+}
+
+/* Hide common blocking message containers */
+.blocked-content,
+.access-denied,
+.policy-violation,
+.admin-block,
+.content-filter,
+.restriction-notice,
+.blocking-message,
+.admin-warning,
+.policy-warning,
+.filter-notice,
+.security-block,
+.corporate-block {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide elements with blocking-related data attributes */
+[data-blocked="true"],
+[data-restricted="true"],
+[data-admin-block="true"],
+[data-policy-block="true"],
+[data-filter="blocked"],
+[data-access="denied"] {
+    display: none !important;
+}
+
+/* Hide notification containers that might contain blocking messages */
+.notification:has(*:contains("blocked")),
+.alert:has(*:contains("admin")),
+.warning:has(*:contains("restricted")),
+.modal:has(*:contains("policy")),
+.popup:has(*:contains("denied")),
+.banner:has(*:contains("filter")) {
+    display: none !important;
+}
+
+/* Hide common modal/overlay patterns for blocking messages */
+.modal-backdrop:has(*:contains("blocked")),
+.overlay:has(*:contains("admin")),
+.popup-overlay:has(*:contains("restricted")) {
+    display: none !important;
+}
+
+/* Hide elements with blocking-related classes */
+[class*="block"][class*="message"],
+[class*="admin"][class*="warning"],
+[class*="policy"][class*="notice"],
+[class*="restrict"][class*="alert"],
+[class*="deny"][class*="notification"],
+[class*="filter"][class*="message"] {
+    display: none !important;
+}
+
+/* Hide elements with blocking-related IDs */
+[id*="admin-block"],
+[id*="policy-warning"],
+[id*="access-denied"],
+[id*="content-blocked"],
+[id*="restriction-notice"],
+[id*="filter-message"] {
+    display: none !important;
+}
+
+/* Force hide elements that might use inline styles to show blocking messages */
+div[style*="display: block"]:contains("blocked"),
+div[style*="visibility: visible"]:contains("admin"),
+span[style*="display: inline"]:contains("restricted") {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide iframes that might contain blocking content */
+iframe[src*="block"],
+iframe[src*="restrict"],
+iframe[src*="deny"],
+iframe[src*="filter"] {
+    display: none !important;
+}
+
+/* Hide images related to blocking */
+img[src*="blocked"],
+img[src*="restricted"],
+img[alt*="blocked"],
+img[alt*="restricted"],
+img[title*="blocked"],
+img[title*="restricted"] {
+    display: none !important;
+}
+
+/* Ensure blocked elements stay hidden even with JavaScript manipulation */
+.blocker-hidden,
+[data-blocker-hidden="true"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -9999 !important;
+}
+
+/* Hide any element that becomes visible and contains blocking text */
+*[style*="display: block"]:contains("IT admin"),
+*[style*="display: flex"]:contains("blocked"),
+*[style*="display: inline"]:contains("restricted") {
+    display: none !important;
+}
+
+/* Additional patterns for corporate blocking pages */
+body:contains("This site is blocked") {
+    background: white !important;
+}
+
+body:contains("Access Denied") * {
+    display: none !important;
+}
+
+body:contains("blocked by your IT admin") {
+    background: white !important;
+}
+
+body:contains("blocked by your IT admin") * {
+    display: none !important;
+}
+
+/* Show a replacement message for completely blocked pages */
+body:contains("blocked by your IT admin")::before {
+    content: "🛡️ Blocking message hidden by extension. Try refreshing or using a VPN." !important;
+    display: block !important;
+    padding: 20px !important;
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    margin: 20px !important;
+    font-family: Arial, sans-serif !important;
+    color: #333 !important;
+}
