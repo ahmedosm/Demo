@@ -1,0 +1,31 @@
+/* CSS rules to hide IT admin blocking messages */
+
+/* Hide elements containing specific text patterns */
+*:contains("blocked by your IT admin"),
+*:contains("IT admin is not allowing"),
+*:contains("content is blocked"),
+*:contains("access denied by administrator"),
+*:contains("restricted by policy") {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Hide common notification containers */
+.notification[data-message*="blocked"],
+.alert[data-message*="admin"],
+.warning[data-message*="restricted"],
+div[class*="block"][class*="message"],
+div[id*="admin"][id*="warning"] {
+    display: none !important;
+}
+
+/* Hide modal overlays that might contain blocking messages */
+.modal:has(*:contains("blocked")),
+.overlay:has(*:contains("admin")),
+.popup:has(*:contains("restricted")) {
+    display: none !important;
+}

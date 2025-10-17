@@ -1,0 +1,38 @@
+{
+  "bypass_methods": {
+    "user_agent_rotation": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+    ],
+    "proxy_settings": {
+      "use_proxy": false,
+      "proxy_list": [
+        "127.0.0.1:8080",
+        "localhost:3128"
+      ]
+    },
+    "dns_settings": {
+      "use_custom_dns": true,
+      "dns_servers": [
+        "8.8.8.8",
+        "1.1.1.1",
+        "9.9.9.9"
+      ]
+    }
+  },
+  "blocked_patterns_to_hide": [
+    "blocked by your IT admin",
+    "IT admin is not allowing",
+    "content is blocked",
+    "access denied by administrator",
+    "restricted by policy"
+  ],
+  "alternative_access_methods": [
+    "Use incognito/private browsing mode",
+    "Clear browser cache and cookies",
+    "Disable browser extensions temporarily",
+    "Try different network connection",
+    "Use mobile hotspot instead of corporate network"
+  ]
+}
